@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Sat Sep 13 05:53:00 2025
+
+@author: ASUS
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Sat Sep 13 03:02:32 2025
 
 @author: 27843
@@ -458,20 +465,18 @@ def draw_flower():
     speed(1)
     circle(-200, 23)
 
-def draw_dont_starve_character():
+def draw_man_with_book():
     import turtle as t
     t.setup(600, 600, 200, 200)
     t.penup()
     t.goto(0, 100)
     t.pendown()
     
-    # 设置颜色和笔刷
     t.pensize(8)
-    t.pencolor("#8C7B6B")  # 棕色
+    t.pencolor("#8C7B6B")  
     t.fillcolor("#A58F7B")
     
-    
-    # 绘制头发
+
     t.penup()
     t.goto(-40, 120)
     t.pendown()
@@ -505,7 +510,7 @@ def draw_dont_starve_character():
     t.circle(10)
     t.end_fill()
     
-    # 绘制身体
+
     t.penup()
     t.goto(-30, -20)
     t.pendown()
@@ -519,7 +524,7 @@ def draw_dont_starve_character():
         t.right(90)
     t.end_fill()
     
-    # 绘制腿部
+
     t.penup()
     t.goto(-20, -100)
     t.pendown()
@@ -533,7 +538,7 @@ def draw_dont_starve_character():
     t.pendown()
     t.fd(40)
     
-    # 绘制手臂
+
     t.penup()
     t.goto(-40, -40)
     t.pendown()
@@ -547,7 +552,7 @@ def draw_dont_starve_character():
     t.seth(340)
     t.fd(35)
     
-    # 绘制胡子
+
     t.penup()
     t.goto(0, 40)
     t.pendown()
@@ -572,12 +577,64 @@ def draw_dont_starve_character():
     t.done()
     5
     
+def draw_audi_logo():
+    import turtle as t
+    t.setup(600, 400, 200, 200)
+    t.speed(8)
+    t.bgcolor("black")
+    t.penup()
+    
+
+    ring_color = "#C0C0C0"  
+    highlight_color = "#FFFFFF" 
+    
+
+    ring_positions = [(-120, 0), (-40, 0), (40, 0), (120, 0)]
+
+    for i, pos in enumerate(ring_positions):
+        t.goto(pos)
+        t.pendown()
+        
+
+        t.pensize(12)
+        t.pencolor(ring_color)
+        t.circle(50)
+        
+        t.penup()
+        t.goto(pos)
+        t.pendown()
+        t.pensize(3)
+        t.pencolor(highlight_color)
+        t.circle(50)
+        t.penup()
+
+
+    t.goto(0, -100)
+    t.pencolor("white")
+    t.write("AUDI", align="center", font=("Arial", 28, "bold"))
+    
+
+    t.penup()
+    t.goto(-180, -130)
+    t.pendown()
+    t.pensize(2)
+    t.pencolor("white")
+    for _ in range(2):
+        t.forward(360)
+        t.left(90)
+        t.forward(260)
+        t.left(90)
+    
+    t.hideturtle()
+    t.done()
+
     screen.exitonclick()
+
 
 print("----- Welcome to the drawing system ----")
 while True:
     a = input("---- Please select what you want to draw:\n"
-              " (1 for python, 2 for flowers, 3 for spiral, 4 for spiderman, 5 for dont_starve_character)\n"
+              " (1 for python, 2 for flowers, 3 for spiral, 4 for spiderman, 5 for man with book, 6 for draw audi logo)\n"
               "Your selection is: ")
     try:
         a = eval(a)
@@ -590,9 +647,12 @@ while True:
         elif a == 4:
             draw_spiderMan()
         elif a == 5:
-            draw_dont_starve_character()
+            draw_man_with_book()
+        elif a == 6:
+            draw_audi_logo()
         else:
-            print("Please input the value in [1,2,3,4,5]")
+            print("Please input the value in [1,2,3,4,5,6]")
     except:
 
-        print("Please input the value in [1,2,3,4,5]")
+        print("Please input the value in [1,2,3,4,5,6]")
+
