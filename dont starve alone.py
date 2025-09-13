@@ -574,7 +574,6 @@ def draw_dont_starve_character():
     
     screen.exitonclick()
 
-# 在菜单中添加这个选项
 print("----- Welcome to the drawing system ----")
 while True:
     a = input("---- Please select what you want to draw:\n"
@@ -595,4 +594,5 @@ while True:
         else:
             print("Please input the value in [1,2,3,4,5]")
     except:
+
         print("Please input the value in [1,2,3,4,5]")
